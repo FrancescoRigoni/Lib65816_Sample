@@ -1,0 +1,11 @@
+.idea/
+CMakeCache.txt
+CMakeFiles/
+Lib65816_Sample
+Lib65816_Sample.cbp
+Makefile
+cmake-build-debug/
+cmake_install.cmake
+lib65816/
+simple-logger/
+
