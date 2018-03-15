@@ -33,8 +33,9 @@ set(SIMPLE_LOGGER_BIN ${binary_dir})
 
 # Add all include directories
 include_directories(src/** ${LIB_65816_SRC}/.. ${SIMPLE_LOGGER_SRC})
-# Add paths for linker
-link_directories(${SIMPLE_LOGGER_BIN} ${LIB_65816_BIN})
+
+set(LIBS ${SIMPLE_LOGGER_BIN}/libSimpleLogger.a ${LIB_65816_BIN}/lib65816.a)
+message(${LIBS})
 
 if (CMAKE_VERSION VERSION_LESS "3.1")
 if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
@@ -51,6 +52,5 @@ file(GLOB sources src/*.cpp)
 add_executable(Lib65816_Sample ${sources})
 add_dependencies(Lib65816_Sample lib65816)
 add_dependencies(Lib65816_Sample simple-logger)
-target_link_libraries(Lib65816_Sample 65816 simpleLogger)
+target_link_libraries(Lib65816_Sample ${LIBS})
 
-message( ${LIB_65816_SRC} )

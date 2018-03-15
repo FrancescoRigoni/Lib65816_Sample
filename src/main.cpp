@@ -10,18 +10,20 @@
 #define LOG_TAG "MAIN"
 
 NativeModeInterrupts nativeInterrupts {
-        .reset = 0x0000,
-        .abort = 0x0000,
-        .brk = 0x0000,
         .coProcessorEnable = 0x0000,
+        .brk = 0x0000,
+        .abort = 0x0000,
+        .nonMaskableInterrupt = 0x0000,
+        .reset = 0x0000,
         .interruptRequest = 0x0000,
-        .nonMaskableInterrupt = 0x0000
+        
 };
 
 EmulationModeInterrupts emulationInterrupts {
-        .nonMaskableInterrupt = 0x0000,
         .coProcessorEnable = 0x0000,
+        .unused = 0x0000,
         .abort = 0x0000,
+        .nonMaskableInterrupt = 0x0000,
         .reset = 0x0000,
         .brkIrq = 0x0000
 };
